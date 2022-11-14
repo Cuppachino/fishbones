@@ -2,14 +2,28 @@
   "name": "fishbones",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
+  "exports": {
+    ".": {
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.js"
+    }
+  },
+  "types": "dist/main.d.ts",
   "scripts": {
-    "type-check": "tsc --noEmit"
+    "dev": "pnpm run dev:esm",
+    "dev:cjs": "tsup src/main.ts --clean --format cjs --sourcemap --watch --onSuccess \"node dist/main.js\"",
+    "dev:esm": "tsup src/main.ts --clean --format esm --sourcemap --watch --onSuccess \"node dist/main.mjs\"",
+    "build": "tsup src/main.ts --clean --format esm,cjs --dts",
+    "build:tar": "pnpm run build && pnpm pack --pack-destination dist_local"
   },
   "keywords": [],
-  "author": "",
+  "author": "cuppachino",
   "license": "gpl-3.0",
   "devDependencies": {
+    "@types/node": "^18.11.9",
+    "chalk": "^5.1.2",
+    "tsup": "^6.4.0",
     "typescript": "4.9.2-rc"
   }
 }
