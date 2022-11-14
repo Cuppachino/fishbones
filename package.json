@@ -8,6 +8,7 @@
   },
   "keywords": [],
   "author": "",
+  "license": "gpl-3.0",
   "devDependencies": {
     "typescript": "4.9.2-rc"
   }
