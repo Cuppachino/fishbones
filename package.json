@@ -17,8 +17,9 @@
     "dev": "pnpm run dev:esm --silent",
     "dev:cjs": "tsup src/main.ts --clean --format cjs --sourcemap --watch --onSuccess \"node dist/main.js\"",
     "dev:esm": "tsup src/main.ts --clean --format esm --sourcemap --watch --onSuccess \"node dist/main.mjs\"",
-    "build": "tsup src/main.ts --clean --format esm,cjs --dts",
-    "build:tar": "pnpm run build && pnpm pack --pack-destination dist_local"
+    "build:bundle": "tsup src/main.ts --clean --format esm,cjs --dts",
+    "build:tar": "pnpm pack --pack-destination dist_local",
+    "build": "pnpm run build:bundle && pnpm run build:tar"
   },
   "keywords": [],
   "author": "cuppachino",

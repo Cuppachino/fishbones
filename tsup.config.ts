@@ -5,7 +5,7 @@ export default defineConfig((options) => ({
   dts: !process.argv.includes('--oneshot') && !options.watch,
   entryPoints: ['src/main.ts'],
   format: ['esm', 'cjs'],
-  minify: true,
+  minify: false,
   outDir: 'dist',
   sourcemap: 'inline',
   treeshake: true,
