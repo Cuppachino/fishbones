@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsup'
 
 export default defineConfig((options) => ({
   clean: !process.argv.includes('--oneshot') || options.clean,
@@ -9,4 +9,5 @@ export default defineConfig((options) => ({
   outDir: 'dist',
   sourcemap: 'inline',
   treeshake: true,
-}));
+  external: ['prettier']
+}))

@@ -17,9 +17,10 @@
     "dev": "pnpm run dev:esm --silent",
     "dev:cjs": "tsup src/main.ts --clean --format cjs --sourcemap --watch --onSuccess \"node dist/main.js\"",
     "dev:esm": "tsup src/main.ts --clean --format esm --sourcemap --watch --onSuccess \"node dist/main.mjs\"",
+    "format": "prettier -c . -w",
     "build:bundle": "tsup src/main.ts --clean --format esm,cjs --dts",
     "build:tar": "pnpm pack --pack-destination dist_local",
-    "build": "pnpm run build:bundle && pnpm run build:tar"
+    "build": "pnpm run format && pnpm run build:bundle && pnpm run build:tar"
   },
   "keywords": [],
   "author": "cuppachino",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@types/node": "^18.11.9",
     "chalk": "^5.1.2",
+    "prettier": "^2.7.1",
     "tsup": "^6.4.0",
     "typescript": "4.9.2-rc"
   }

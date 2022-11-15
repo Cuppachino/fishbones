@@ -3,12 +3,14 @@ lockfileVersion: 5.4
 specifiers:
   '@types/node': ^18.11.9
   chalk: ^5.1.2
+  prettier: ^2.7.1
   tsup: ^6.4.0
   typescript: 4.9.2-rc
 
 devDependencies:
   '@types/node': 18.11.9
   chalk: 5.1.2
+  prettier: 2.7.1
   tsup: 6.4.0_typescript@4.9.2-rc
   typescript: 4.9.2-rc
 
@@ -651,6 +653,12 @@ packages:
     dependencies:
       lilconfig: 2.0.6
       yaml: 1.10.2
+    dev: true
+
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /punycode/2.1.1:
